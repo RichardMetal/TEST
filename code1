@@ -1,0 +1,37 @@
+   System.Windows.Forms.Application.DoEvents()
+
+        If conn.State = ConnectionState.Closed Then
+            conn.Open()
+        End If
+
+
+
+
+        Dim Atmt As Outlook.Attachment
+
+        Dim objOutlook As Outlook._Application
+        objOutlook = New Outlook.Application
+
+
+
+        Dim objNS As Outlook._NameSpace = objOutlook.Session
+        Dim objContacts As Outlook.MAPIFolder = _
+            objNS.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox)
+        Dim objItems As Outlook._Items = objContacts.Items
+        Dim iCount As Int16 = objItems.Count
+        Dim i As Int16
+
+        Dim sSplit() As String
+
+        Dim JSAJobID As Integer
+        Dim JSAContractorID As Integer
+        Dim JSADate As Date
+        Dim JSANotesID As Integer
+        Dim JSAJobType As String
+        Dim jobcode As String
+        Dim JSABuilder As String
+        Dim JSAContractorFirstname As String
+        Dim JSAContractorSurname As String
+        Dim JSAJobTypeName As String
+        Dim attachcount As Integer
+        Dim MainJobID As Integer
